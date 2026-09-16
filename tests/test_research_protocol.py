@@ -43,6 +43,8 @@ def test_checkpoint_roundtrip_includes_trainer_state_and_config_fingerprint(tmp_
 
 
 def test_affect_aware_loss_is_finite_for_extreme_logits():
+    # Cosine / tiny temperature creates logits ~ +/-1000. A direct exp(logits)
+    # implementation overflows, while log-sum-exp / cross-entropy remains stable.
     audio = torch.eye(4)
     lyrics = torch.eye(4)
     labels = torch.tensor([0, 1, 2, 3])
@@ -59,7 +61,9 @@ def _official_two_task_cagrad_reference(g1: torch.Tensor, g2: torch.Tensor, alph
 
     def obj(x):
         x = np.asarray(x, dtype=np.float64)
-        return float(x.reshape(1, 2) @ A @ b.reshape(2, 1) + c * np.sqrt(x.reshape(1, 2) @ A @ x.reshape(2, 1) + 1e-8))
+        linear = float((x.reshape(1, 2) @ A @ b.reshape(2, 1))[0, 0])
+        quadratic = float((x.reshape(1, 2) @ A @ x.reshape(2, 1))[0, 0])
+        return linear + c * np.sqrt(quadratic + 1e-8)
 
     res = minimize(
         obj,
@@ -111,3 +115,15 @@ def test_all_slurm_arrays_are_serialized_to_one_gpu():
         for line in source.splitlines():
             if line.startswith("#SBATCH --array="):
                 assert line.rstrip().endswith("%1"), f"{path}: {line}"
+
+
+def test_final_evaluation_skips_already_completed_checkpoint_hash():
+    source = (ROOT / "scripts/final_evaluate.py").read_text(encoding="utf-8")
+    assert "checkpoint_sha256" in source
+    assert "already evaluated" in source
+
+
+def test_optuna_trials_are_a_total_target_not_added_on_every_resume():
+    source = (ROOT / "scripts/tune.py").read_text(encoding="utf-8")
+    assert "remaining_trials" in source
+    assert "TrialState.COMPLETE" in source

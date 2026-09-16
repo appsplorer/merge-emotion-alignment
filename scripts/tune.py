@@ -7,6 +7,7 @@ from pathlib import Path
 import optuna
 import torch
 import yaml
+from optuna.trial import TrialState
 from torch.utils.data import DataLoader
 
 from merge_emotion.config import compose_config
@@ -70,7 +71,13 @@ def main():
         load_if_exists=True,
         sampler=optuna.samplers.TPESampler(seed=2026),
     )
-    study.optimize(objective, n_trials=args.trials)
+    completed_trials = sum(1 for trial in study.trials if trial.state == TrialState.COMPLETE)
+    remaining_trials = max(0, int(args.trials) - completed_trials)
+    if remaining_trials:
+        print("Completed trials:", completed_trials, "remaining to target:", remaining_trials)
+        study.optimize(objective, n_trials=remaining_trials)
+    else:
+        print("Target completed trials already reached:", completed_trials)
     output = ROOT / "results" / "manifests" / "optuna_best.yaml"
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(

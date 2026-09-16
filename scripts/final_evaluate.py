@@ -55,8 +55,27 @@ def main():
         run_id = str(entry["run_id"])
         run_dir = Path(entry["run_dir"])
         checkpoint = Path(entry["checkpoint"])
-        if sha256_file(checkpoint) != str(entry["checkpoint_sha256"]):
+        checkpoint_sha256 = str(entry["checkpoint_sha256"])
+        if sha256_file(checkpoint) != checkpoint_sha256:
             raise ValueError("Checkpoint hash mismatch for %s" % run_id)
+
+        out_dir = PROJECT_ROOT / "results" / "final_test" / run_id
+        metrics_path = out_dir / "metrics.json"
+        predictions_path = out_dir / "predictions.csv"
+        if metrics_path.exists():
+            existing = json.loads(metrics_path.read_text(encoding="utf-8"))
+            if (
+                existing.get("split") == "test"
+                and existing.get("checkpoint_sha256") == checkpoint_sha256
+                and predictions_path.exists()
+            ):
+                print("Skipping already evaluated run:", run_id)
+                continue
+            raise ValueError(
+                "Existing final-test output for %s does not match the frozen checkpoint; "
+                "refusing to overwrite it" % run_id
+            )
+
         cfg = load_yaml(run_dir / "config.yaml")
         modality = cfg["experiment"]["modality"]
         dataset = MergeFeatureDataset(
@@ -83,13 +102,12 @@ def main():
                 "seed": int(cfg["project"]["seed"]),
                 "split": "test",
                 "selection_manifest": str(manifest_path),
-                "checkpoint_sha256": entry["checkpoint_sha256"],
+                "checkpoint_sha256": checkpoint_sha256,
             }
         )
-        out_dir = PROJECT_ROOT / "results" / "final_test" / run_id
         out_dir.mkdir(parents=True, exist_ok=True)
-        write_json(metrics, out_dir / "metrics.json")
-        pd.DataFrame(predictions).to_csv(out_dir / "predictions.csv", index=False)
+        write_json(metrics, metrics_path)
+        pd.DataFrame(predictions).to_csv(predictions_path, index=False)
         print(json.dumps(metrics, indent=2))
 
 
