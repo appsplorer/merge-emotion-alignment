@@ -91,6 +91,7 @@ cspa:
   curvature_min: 0.0
   curvature_max: 10000.0
   eps: 1.0e-8
+  guarantee_scope: conditional_raw_sgd_if_beta_upper_bound
 
 gradient_strategy:
   name: scalarization

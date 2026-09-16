@@ -68,3 +68,20 @@ def save_yaml(config: Dict[str, Any], path: Path) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     with path.open("w", encoding="utf-8") as handle:
         yaml.safe_dump(config, handle, sort_keys=False)
+
+
+def apply_tuned_params(config: Dict[str, Any], params: Dict[str, Any]) -> Dict[str, Any]:
+    """Apply the shared Optuna hyperparameters to a resolved experiment config."""
+    result = copy.deepcopy(config)
+    if "learning_rate" in params:
+        result["optimizer"]["learning_rate"] = float(params["learning_rate"])
+    if "weight_decay" in params:
+        result["optimizer"]["weight_decay"] = float(params["weight_decay"])
+    if "dropout" in params:
+        value = float(params["dropout"])
+        result["audio_model"]["dropout"] = value
+        result["lyrics_model"]["dropout"] = value
+        result["multimodal"]["dropout"] = value
+    if "lambda_uni" in params:
+        result["emotion_loss"]["lambda_uni"] = float(params["lambda_uni"])
+    return result
