@@ -21,7 +21,13 @@ After all hyperparameters, methods, and final seeds are fixed using validation o
 
 ## One-GPU execution
 
-All compute stages are submitted to the GPU partition with `--gres=gpu:1`. Slurm arrays are throttled with `%1`, so at most one experiment task runs at any time. CPU work such as data loading, pytest, CSV aggregation, and statistics uses CPUs attached to that same GPU allocation; the pipeline does not require a separate CPU partition.
+The production experiment is submitted as **one Slurm batch job** (`slurm/12_full_pipeline_single_job.sbatch`) requesting exactly one GPU for up to four days. All stages run sequentially inside that same allocation through `scripts/run_full_pipeline_single_gpu.sh`; the runner does not submit nested Slurm jobs or arrays. This avoids releasing the GPU between feature extraction, tuning, baselines, sweeps, final seeds, test evaluation, and analysis.
+
+CPU work such as data loading, pytest, CSV aggregation, and statistics uses the four CPU cores attached to the same GPU allocation; the pipeline does not require a separate CPU partition.
+
+The runner writes success markers under `results/manifests/single_gpu_state/`. A marker is created only after the corresponding stage or deterministic run exits successfully. If the four-day job is interrupted and must later be resubmitted, completed stages are skipped, Optuna continues toward its total target of 30 completed trials, and training runs use `--resume auto`.
+
+The older stage-specific Slurm files are retained as diagnostic/manual fallbacks but are not used by `scripts/submit_one_gpu_pipeline.sh` for the production full experiment.
 
 ## Resume
 
