@@ -1,0 +1,4 @@
+experiment:
+  name: lyrics_only
+  modality: lyrics
+  alignment: false

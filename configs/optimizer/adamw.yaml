@@ -1,0 +1,18 @@
+optimizer:
+  name: adamw
+  learning_rate: 0.0003
+  weight_decay: 0.0001
+  gradient_clip_norm: 1.0
+
+scheduler:
+  name: cosine
+  warmup_ratio: 0.10
+
+training:
+  batch_size: 32
+  max_epochs: 50
+  early_stopping_patience: 7
+  monitor: val_macro_f1
+  monitor_mode: max
+  save_last: true
+  save_best: true

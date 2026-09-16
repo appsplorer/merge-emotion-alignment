@@ -1,0 +1,6 @@
+experiment:
+  name: cspa_affect
+  modality: multimodal
+  alignment: true
+  optimizer: cspa
+  affect_aware: true

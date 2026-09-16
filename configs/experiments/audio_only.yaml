@@ -1,0 +1,4 @@
+experiment:
+  name: audio_only
+  modality: audio
+  alignment: false

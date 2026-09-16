@@ -1,0 +1,3 @@
+alignment_optimizer:
+  name: cagrad
+  c: 0.40

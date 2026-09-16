@@ -1,0 +1,19 @@
+project:
+  name: merge-emotion-alignment
+  root: /beegfs/general/sa25abo/research_workplace/Projects/merge-emotion-alignment
+  seed: 42
+  deterministic: true
+
+paths:
+  data_root: /beegfs/general/sa25abo/research_workplace/Projects/merge-emotion-alignment/data
+  cache_root: /beegfs/general/sa25abo/research_workplace/Projects/merge-emotion-alignment/cache
+  checkpoint_root: /beegfs/general/sa25abo/research_workplace/Projects/merge-emotion-alignment/checkpoints
+  log_root: /beegfs/general/sa25abo/research_workplace/Projects/merge-emotion-alignment/logs
+  run_root: /beegfs/general/sa25abo/research_workplace/Projects/merge-emotion-alignment/results/runs
+  model_cache: /beegfs/general/sa25abo/research_workplace/Models/huggingface_cache
+
+runtime:
+  device: auto
+  precision: bf16
+  num_workers: 4
+  pin_memory: true

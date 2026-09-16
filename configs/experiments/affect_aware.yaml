@@ -1,0 +1,5 @@
+experiment:
+  name: affect_aware
+  modality: multimodal
+  alignment: true
+  affect_aware: true

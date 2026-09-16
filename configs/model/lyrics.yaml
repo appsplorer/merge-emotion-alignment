@@ -1,0 +1,9 @@
+lyrics_model:
+  pretrained: "FacebookAI/roberta-base"
+  local_path: "/beegfs/general/sa25abo/research_workplace/Models/huggingface_cache/FacebookAI__roberta-base"
+  freeze_backbone: true
+  hidden_dim: 256
+  transformer_layers: 2
+  attention_heads: 4
+  ffn_dim: 512
+  dropout: 0.20

@@ -1,0 +1,7 @@
+alignment_optimizer:
+  name: cspa
+  lambda_max: 1.0
+  kappa: 0.80
+  rho: 0.50
+  ema_beta: 0.90
+  eps: 1.0e-8

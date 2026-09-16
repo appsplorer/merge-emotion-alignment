@@ -1,0 +1,5 @@
+experiment:
+  name: multimodal_fixed
+  modality: multimodal
+  alignment: true
+  optimizer: fixed

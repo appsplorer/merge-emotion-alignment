@@ -1,0 +1,4 @@
+affect_aware:
+  enabled: false
+  epsilon: 0.10
+  gamma: 1.0

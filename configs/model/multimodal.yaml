@@ -1,0 +1,8 @@
+multimodal:
+  hidden_dim: 256
+  fusion: gated_cross_attention
+  transformer_layers: 2
+  attention_heads: 4
+  ffn_dim: 512
+  dropout: 0.20
+  num_classes: 4

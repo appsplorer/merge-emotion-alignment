@@ -1,0 +1,3 @@
+emotion_loss:
+  lambda_uni: 0.50
+  class_weighting: none

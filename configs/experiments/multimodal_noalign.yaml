@@ -1,0 +1,4 @@
+experiment:
+  name: multimodal_noalign
+  modality: multimodal
+  alignment: false
