@@ -1,0 +1,205 @@
+{
+  "created_utc": "2026-09-16T21:59:18.000588+00:00",
+  "git_sha": "92d0fae0613435de7a67f364b79190638593baf0",
+  "figures_dir": "figures",
+  "records": [
+    {
+      "figure": "architecture_pipeline",
+      "inputs": [],
+      "outputs": [
+        {
+          "path": "figures/architecture_pipeline.pdf",
+          "exists": true,
+          "size_bytes": 17940,
+          "sha256": "bd140a7e15451ad36d1de60514fb8ae27924ab9b8fdb359d33c8e9b7c39e9549"
+        },
+        {
+          "path": "figures/architecture_pipeline.png",
+          "exists": true,
+          "size_bytes": 57293,
+          "sha256": "e060bf97555960663bca4e4472b5f7a99ec3ea0a78230a749890f07ff0394777"
+        }
+      ]
+    },
+    {
+      "figure": "lambda_sensitivity_validation",
+      "inputs": [
+        "results/summaries/all_runs.csv"
+      ],
+      "outputs": [
+        {
+          "path": "figures/lambda_sensitivity_validation.pdf",
+          "exists": true,
+          "size_bytes": 14308,
+          "sha256": "da5127e7ff9e47dec59f11eb241d647677186aaf6e3f31a3398b900cb3c35e67"
+        },
+        {
+          "path": "figures/lambda_sensitivity_validation.png",
+          "exists": true,
+          "size_bytes": 45329,
+          "sha256": "f9629c20e0ec960ec7aa86e2bf35a830d81dcf0fb8cdab94c64ba155b71d0d51"
+        }
+      ]
+    },
+    {
+      "figure": "training_curve_cspa_validation",
+      "inputs": [
+        "results/runs/final_cspa_affect_seed3407/history.csv"
+      ],
+      "outputs": [
+        {
+          "path": "figures/training_curve_cspa_validation.pdf",
+          "exists": true,
+          "size_bytes": 12498,
+          "sha256": "e19d7792907b63a6cb460bbaf7ff0c97f6f36ecb6c44141a3e44546041461c08"
+        },
+        {
+          "path": "figures/training_curve_cspa_validation.png",
+          "exists": true,
+          "size_bytes": 26060,
+          "sha256": "675eabb5b725ae5e0150d6ed7758a4951ef61ce817252fc5efbc0cd251380262"
+        }
+      ]
+    },
+    {
+      "figure": "cspa_diagnostics_validation",
+      "inputs": [
+        "results/runs/final_cspa_affect_seed3407/gradient_stats.csv"
+      ],
+      "outputs": [
+        {
+          "path": "figures/cspa_diagnostics_validation.pdf",
+          "exists": true,
+          "size_bytes": 23582,
+          "sha256": "54a9186d3de607d28d325ec2b44d0914ea0a747f1ca011ede875e537a13cf7ca"
+        },
+        {
+          "path": "figures/cspa_diagnostics_validation.png",
+          "exists": true,
+          "size_bytes": 53498,
+          "sha256": "8e6c5849e84e83fbe2100841cb7f5578d48907f29df819aaf079abd48dae7f0e"
+        }
+      ]
+    },
+    {
+      "figure": "main_performance_final_test",
+      "inputs": [
+        "results/summaries/final_test_runs.csv"
+      ],
+      "outputs": [
+        {
+          "path": "figures/main_performance_final_test.pdf",
+          "exists": true,
+          "size_bytes": 17175,
+          "sha256": "02b8004f91622cd70603e0edbb3b446a4c6de171b096375e2a9abcdf55e1c0b5"
+        },
+        {
+          "path": "figures/main_performance_final_test.png",
+          "exists": true,
+          "size_bytes": 44377,
+          "sha256": "5a8f8422442b5f5f20517950e316b64f0f2eb241b9e49d98b001271f4b8b1bc3"
+        }
+      ]
+    },
+    {
+      "figure": "alignment_vs_f1_final_test",
+      "inputs": [
+        "results/summaries/final_test_runs.csv"
+      ],
+      "outputs": [
+        {
+          "path": "figures/alignment_vs_f1_final_test.pdf",
+          "exists": true,
+          "size_bytes": 19594,
+          "sha256": "498787448b962b52a9b9fcddfac6735ba4f8acc96dbf98759b7e6f39f57d345b"
+        },
+        {
+          "path": "figures/alignment_vs_f1_final_test.png",
+          "exists": true,
+          "size_bytes": 41920,
+          "sha256": "37a8aaf9ff6f806d92b642e85bf20378d33223d4293e1715cb3fbd4b4191a4cf"
+        }
+      ]
+    },
+    {
+      "figure": "pareto_final_test",
+      "inputs": [
+        "results/summaries/final_test_runs.csv"
+      ],
+      "outputs": [
+        {
+          "path": "figures/pareto_final_test.pdf",
+          "exists": true,
+          "size_bytes": 15807,
+          "sha256": "d23628e02ecda9d447b53aeed9cfafdf31703c5858431b40802bcf308d06dbbc"
+        },
+        {
+          "path": "figures/pareto_final_test.png",
+          "exists": true,
+          "size_bytes": 33190,
+          "sha256": "c7f2681804ee41ccf3599ff0abdb2a149e48a86ffea3efee877d0ee489142fd7"
+        }
+      ]
+    },
+    {
+      "figure": "method_alignment_summary_final_test",
+      "inputs": [
+        "results/summaries/final_test_runs.csv"
+      ],
+      "outputs": [
+        {
+          "path": "figures/method_alignment_summary_final_test.pdf",
+          "exists": true,
+          "size_bytes": 17386,
+          "sha256": "fca00eb2c31d92a3365ace34162b164a85dc8940c137af94ac78d74b63d7f324"
+        },
+        {
+          "path": "figures/method_alignment_summary_final_test.png",
+          "exists": true,
+          "size_bytes": 32671,
+          "sha256": "e64235418d07017f3673aa8527214ceb593e677fef8e2a0156564591483e93a9"
+        }
+      ]
+    },
+    {
+      "figure": "per_quadrant_cspa_affect_final_test",
+      "inputs": [
+        "results/summaries/final_test_runs.csv"
+      ],
+      "outputs": [
+        {
+          "path": "figures/per_quadrant_cspa_affect_final_test.pdf",
+          "exists": true,
+          "size_bytes": 17108,
+          "sha256": "6846776bfdd87631bee615049da7f07a1aad002cbb0dd71cbd3f63752ed9964e"
+        },
+        {
+          "path": "figures/per_quadrant_cspa_affect_final_test.png",
+          "exists": true,
+          "size_bytes": 26705,
+          "sha256": "f3406ee1869342d828f1ac9df55dbca701494e729ab66871d7c49c5bf4a59ac9"
+        }
+      ]
+    },
+    {
+      "figure": "confusion_cspa_affect_seed42",
+      "inputs": [
+        "results/final_test/final_cspa_affect_seed42/predictions.csv"
+      ],
+      "outputs": [
+        {
+          "path": "figures/confusion_cspa_affect_seed42.pdf",
+          "exists": true,
+          "size_bytes": 14302,
+          "sha256": "afa328a81915a6781913551344a4884b352df8202e7d18cdea61e470bcd56b2b"
+        },
+        {
+          "path": "figures/confusion_cspa_affect_seed42.png",
+          "exists": true,
+          "size_bytes": 18704,
+          "sha256": "cbe4e9f9b43ce4f5c147739879acfec59e8b82addf64c998bd714f2662984400"
+        }
+      ]
+    }
+  ]
+}
