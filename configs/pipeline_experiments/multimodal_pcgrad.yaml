@@ -1,0 +1,11 @@
+includes:
+  - configs/base.yaml
+  - configs/pipeline/common.yaml
+experiment:
+  name: multimodal_pcgrad
+  modality: multimodal
+contrastive:
+  enabled: true
+  lambda_align: 0.10
+gradient_strategy:
+  name: pcgrad

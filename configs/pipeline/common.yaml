@@ -1,0 +1,96 @@
+dataset:
+  name: MERGE_Bimodal_Complete
+  version: "1.1.0"
+  profile: "70-15-15"
+  manifest: data/processed/pairs_70-15-15.csv
+  num_classes: 4
+  labels: [Q1, Q2, Q3, Q4]
+
+audio:
+  sample_rate: 24000
+  clip_seconds: 30
+  segment_seconds: 5
+  max_segments: 6
+
+lyrics:
+  max_tokens_per_chunk: 256
+  max_chunks: 8
+
+audio_model:
+  pretrained: m-a-p/MERT-v1-95M
+  local_path: /beegfs/general/sa25abo/research_workplace/Models/huggingface_cache/m-a-p__MERT-v1-95M
+  input_dim: 768
+  hidden_dim: 256
+  transformer_layers: 2
+  attention_heads: 4
+  ffn_dim: 512
+  dropout: 0.20
+  max_tokens: 6
+
+lyrics_model:
+  pretrained: FacebookAI/roberta-base
+  local_path: /beegfs/general/sa25abo/research_workplace/Models/huggingface_cache/FacebookAI__roberta-base
+  input_dim: 768
+  hidden_dim: 256
+  transformer_layers: 2
+  attention_heads: 4
+  ffn_dim: 512
+  dropout: 0.20
+  max_tokens: 8
+
+multimodal:
+  hidden_dim: 256
+  attention_heads: 4
+  cross_attention_dropout: 0.10
+  fusion_layers: 2
+  ffn_dim: 512
+  dropout: 0.20
+  num_classes: 4
+
+emotion_loss:
+  lambda_uni: 0.50
+  label_smoothing: 0.00
+
+contrastive:
+  enabled: true
+  lambda_align: 0.10
+  temperature: 0.07
+  symmetric: true
+
+affect_aware:
+  enabled: false
+  epsilon: 0.10
+  gamma: 1.00
+
+optimizer:
+  name: adamw
+  learning_rate: 0.0003
+  weight_decay: 0.0001
+  gradient_clip_norm: 1.0
+
+scheduler:
+  name: cosine
+  warmup_ratio: 0.10
+
+training:
+  batch_size: 32
+  max_epochs: 50
+  early_stopping_patience: 7
+  monitor: val_macro_f1
+  monitor_mode: max
+  save_last: true
+  save_best: true
+
+cspa:
+  enabled: false
+  lambda_max: 1.0
+  kappa: 0.80
+  rho: 0.50
+  ema_beta: 0.90
+  curvature_safety_factor: 1.50
+  curvature_min: 0.0
+  curvature_max: 10000.0
+  eps: 1.0e-8
+
+gradient_strategy:
+  name: scalarization

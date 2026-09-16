@@ -1,0 +1,8 @@
+includes:
+  - configs/base.yaml
+  - configs/pipeline/common.yaml
+experiment:
+  name: multimodal_noalign
+  modality: multimodal
+contrastive:
+  enabled: false

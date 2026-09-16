@@ -1,0 +1,13 @@
+includes:
+  - configs/base.yaml
+  - configs/pipeline/common.yaml
+experiment:
+  name: cspa_affect
+  modality: multimodal
+contrastive:
+  enabled: true
+  lambda_align: 0.10
+affect_aware:
+  enabled: true
+cspa:
+  enabled: true

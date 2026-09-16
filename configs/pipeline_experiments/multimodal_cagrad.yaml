@@ -1,0 +1,12 @@
+includes:
+  - configs/base.yaml
+  - configs/pipeline/common.yaml
+experiment:
+  name: multimodal_cagrad
+  modality: multimodal
+contrastive:
+  enabled: true
+  lambda_align: 0.10
+gradient_strategy:
+  name: cagrad
+  c: 0.50
