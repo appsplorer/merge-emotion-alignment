@@ -1,4 +1,5 @@
 from pathlib import Path
+import re
 
 import numpy as np
 import pandas as pd
@@ -119,7 +120,8 @@ def test_all_slurm_arrays_are_serialized_to_one_gpu():
 
 def test_full_pipeline_submission_uses_one_four_day_gpu_allocation():
     submitter = (ROOT / "scripts/submit_one_gpu_pipeline.sh").read_text(encoding="utf-8")
-    assert submitter.count("sbatch") == 1
+    # Count shell command invocations, not the `.sbatch` filename suffix itself.
+    assert len(re.findall(r"\bsbatch\s+", submitter)) == 1
     assert "--dependency" not in submitter
     assert "12_full_pipeline_single_job.sbatch" in submitter
 
