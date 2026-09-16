@@ -1,0 +1,101 @@
+[
+  {
+    "path": "/beegfs/general/sa25abo/research_workplace/Projects/merge-emotion-alignment/data/extracted/merge_bimodal_complete/MERGE_Bimodal_Complete/merge_bimodal_complete_av_values.csv",
+    "rows": 2216,
+    "columns": [
+      "Audio_Song",
+      "Lyric_Song",
+      "Arousal",
+      "Valence"
+    ],
+    "readable": true
+  },
+  {
+    "path": "/beegfs/general/sa25abo/research_workplace/Projects/merge-emotion-alignment/data/extracted/merge_bimodal_complete/MERGE_Bimodal_Complete/merge_bimodal_complete_metadata.csv",
+    "rows": 2216,
+    "columns": [
+      "Audio_Song",
+      "Lyric_Song",
+      "Quadrant",
+      "AllMusic Id",
+      "AllMusic Extraction Date",
+      "Artist",
+      "Title",
+      "Relevance",
+      "Year",
+      "LowestYear",
+      "Duration",
+      "Moods",
+      "MoodsAll",
+      "MoodsAllWeights",
+      "Genres",
+      "GenreWeights",
+      "Themes",
+      "ThemeWeights",
+      "Styles",
+      "StyleWeights",
+      "AppearancesTrackIDs",
+      "AppearancesAlbumIDs",
+      "Sample",
+      "SampleURL",
+      "ActualYear",
+      "num_Genres",
+      "num_MoodsAll"
+    ],
+    "readable": true
+  },
+  {
+    "path": "/beegfs/general/sa25abo/research_workplace/Projects/merge-emotion-alignment/data/extracted/merge_bimodal_complete/MERGE_Bimodal_Complete/tvt_dataframes/tvt_40_30_30/tvt_40_30_30_test_bimodal_complete.csv",
+    "rows": 664,
+    "columns": [
+      "Song",
+      "Quadrant"
+    ],
+    "readable": true
+  },
+  {
+    "path": "/beegfs/general/sa25abo/research_workplace/Projects/merge-emotion-alignment/data/extracted/merge_bimodal_complete/MERGE_Bimodal_Complete/tvt_dataframes/tvt_40_30_30/tvt_40_30_30_train_bimodal_complete.csv",
+    "rows": 888,
+    "columns": [
+      "Song",
+      "Quadrant"
+    ],
+    "readable": true
+  },
+  {
+    "path": "/beegfs/general/sa25abo/research_workplace/Projects/merge-emotion-alignment/data/extracted/merge_bimodal_complete/MERGE_Bimodal_Complete/tvt_dataframes/tvt_40_30_30/tvt_40_30_30_validate_bimodal_complete.csv",
+    "rows": 664,
+    "columns": [
+      "Song",
+      "Quadrant"
+    ],
+    "readable": true
+  },
+  {
+    "path": "/beegfs/general/sa25abo/research_workplace/Projects/merge-emotion-alignment/data/extracted/merge_bimodal_complete/MERGE_Bimodal_Complete/tvt_dataframes/tvt_70_15_15/tvt_70_15_15_test_bimodal_complete.csv",
+    "rows": 332,
+    "columns": [
+      "Song",
+      "Quadrant"
+    ],
+    "readable": true
+  },
+  {
+    "path": "/beegfs/general/sa25abo/research_workplace/Projects/merge-emotion-alignment/data/extracted/merge_bimodal_complete/MERGE_Bimodal_Complete/tvt_dataframes/tvt_70_15_15/tvt_70_15_15_train_bimodal_complete.csv",
+    "rows": 1552,
+    "columns": [
+      "Song",
+      "Quadrant"
+    ],
+    "readable": true
+  },
+  {
+    "path": "/beegfs/general/sa25abo/research_workplace/Projects/merge-emotion-alignment/data/extracted/merge_bimodal_complete/MERGE_Bimodal_Complete/tvt_dataframes/tvt_70_15_15/tvt_70_15_15_validate_bimodal_complete.csv",
+    "rows": 332,
+    "columns": [
+      "Song",
+      "Quadrant"
+    ],
+    "readable": true
+  }
+]

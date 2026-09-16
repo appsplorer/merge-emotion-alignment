@@ -1,0 +1,13 @@
+split,quadrant,count
+train,Q1,207
+train,Q2,275
+train,Q3,194
+train,Q4,212
+validation,Q1,159
+validation,Q2,199
+validation,Q3,153
+validation,Q4,153
+test,Q1,159
+test,Q2,199
+test,Q3,153
+test,Q4,153

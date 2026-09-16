@@ -1,0 +1,84 @@
+{
+  "status": "PASS",
+  "profile": "40-30-30",
+  "dataset_root": "/beegfs/general/sa25abo/research_workplace/Projects/merge-emotion-alignment/data/extracted/merge_bimodal_complete",
+  "metadata_file": "/beegfs/general/sa25abo/research_workplace/Projects/merge-emotion-alignment/data/extracted/merge_bimodal_complete/MERGE_Bimodal_Complete/merge_bimodal_complete_metadata.csv",
+  "metadata_split_id_column": "Audio_Song",
+  "metadata_audio_id_column": "Audio_Song",
+  "metadata_lyric_id_column": "Lyric_Song",
+  "metadata_rows": 2216,
+  "metadata_unique_ids": 2216,
+  "quadrant_counts": {
+    "Q1": 525,
+    "Q2": 673,
+    "Q3": 500,
+    "Q4": 518
+  },
+  "split_files": {
+    "train": "/beegfs/general/sa25abo/research_workplace/Projects/merge-emotion-alignment/data/extracted/merge_bimodal_complete/MERGE_Bimodal_Complete/tvt_dataframes/tvt_40_30_30/tvt_40_30_30_train_bimodal_complete.csv",
+    "validation": "/beegfs/general/sa25abo/research_workplace/Projects/merge-emotion-alignment/data/extracted/merge_bimodal_complete/MERGE_Bimodal_Complete/tvt_dataframes/tvt_40_30_30/tvt_40_30_30_validate_bimodal_complete.csv",
+    "test": "/beegfs/general/sa25abo/research_workplace/Projects/merge-emotion-alignment/data/extracted/merge_bimodal_complete/MERGE_Bimodal_Complete/tvt_dataframes/tvt_40_30_30/tvt_40_30_30_test_bimodal_complete.csv"
+  },
+  "split_sizes": {
+    "train": 888,
+    "validation": 664,
+    "test": 664
+  },
+  "split_ratios": {
+    "train": 0.4007220216606498,
+    "validation": 0.2996389891696751,
+    "test": 0.2996389891696751
+  },
+  "direct_id_overlaps": {
+    "train__validation": [],
+    "train__test": [],
+    "validation__test": []
+  },
+  "canonical_id_overlaps": {
+    "train__validation": [],
+    "train__test": [],
+    "validation__test": []
+  },
+  "missing_from_splits": [],
+  "extra_in_splits": [],
+  "artist_title_cross_split_collisions": [
+    {
+      "identity": "luther vandross::never too much",
+      "splits": [
+        "train",
+        "validation"
+      ]
+    },
+    {
+      "identity": "enya::journey of the angels",
+      "splits": [
+        "train",
+        "validation"
+      ]
+    },
+    {
+      "identity": "gloria estefan::rhythm is gonna get you",
+      "splits": [
+        "test",
+        "validation"
+      ]
+    },
+    {
+      "identity": "slayer::cant stand you",
+      "splits": [
+        "test",
+        "validation"
+      ]
+    }
+  ],
+  "audio_files_found": 2216,
+  "lyrics_files_found": 2216,
+  "expected_audio_ids": 2216,
+  "expected_lyric_ids": 2216,
+  "audio_ids_matched_by_stem": 2216,
+  "lyrics_ids_matched_by_stem": 2216,
+  "hard_errors": [],
+  "warnings": [
+    "Found 4 artist-title identities occurring across multiple splits. Inspect these manually before treating them as leakage."
+  ]
+}

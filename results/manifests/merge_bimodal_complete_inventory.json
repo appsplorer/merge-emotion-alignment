@@ -1,0 +1,19 @@
+{
+  "root": "/beegfs/general/sa25abo/research_workplace/Projects/merge-emotion-alignment/data/extracted/merge_bimodal_complete",
+  "files": 4440,
+  "bytes": 753968001,
+  "extensions": {
+    ".csv": {
+      "files": 8,
+      "bytes": 2108291
+    },
+    ".mp3": {
+      "files": 2216,
+      "bytes": 749078414
+    },
+    ".txt": {
+      "files": 2216,
+      "bytes": 2781296
+    }
+  }
+}
