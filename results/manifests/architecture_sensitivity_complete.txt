@@ -1,0 +1,8 @@
+completed=2026-09-17T00:29:48+01:00
+job_id=2394425
+host=gpu9
+git_sha=e85b4fde3c00443e0f6048b4633862ba2815b5d3
+reservation=sa25abo
+architecture_runs=27
+architecture_split=validation
+architecture_test_evaluated=false

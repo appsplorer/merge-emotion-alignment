@@ -1,0 +1,128 @@
+{
+  "created_utc": "2026-09-16T23:29:41.308395+00:00",
+  "git_sha": "e85b4fde3c00443e0f6048b4633862ba2815b5d3",
+  "protocol": {
+    "architecture_split": "validation",
+    "architecture_test_evaluated": false,
+    "architecture_seeds": [
+      42,
+      123,
+      777
+    ],
+    "architecture_variants": {
+      "base": {
+        "hidden_dim": 256,
+        "modality_layers": 2,
+        "fusion_layers": 2,
+        "heads": 4,
+        "ffn_dim": 512
+      },
+      "hidden_128": {
+        "hidden_dim": 128,
+        "modality_layers": 2,
+        "fusion_layers": 2,
+        "heads": 4,
+        "ffn_dim": 256
+      },
+      "hidden_384": {
+        "hidden_dim": 384,
+        "modality_layers": 2,
+        "fusion_layers": 2,
+        "heads": 4,
+        "ffn_dim": 768
+      },
+      "encoder_1": {
+        "hidden_dim": 256,
+        "modality_layers": 1,
+        "fusion_layers": 2,
+        "heads": 4,
+        "ffn_dim": 512
+      },
+      "encoder_3": {
+        "hidden_dim": 256,
+        "modality_layers": 3,
+        "fusion_layers": 2,
+        "heads": 4,
+        "ffn_dim": 512
+      },
+      "fusion_1": {
+        "hidden_dim": 256,
+        "modality_layers": 2,
+        "fusion_layers": 1,
+        "heads": 4,
+        "ffn_dim": 512
+      },
+      "fusion_3": {
+        "hidden_dim": 256,
+        "modality_layers": 2,
+        "fusion_layers": 3,
+        "heads": 4,
+        "ffn_dim": 512
+      },
+      "heads_2": {
+        "hidden_dim": 256,
+        "modality_layers": 2,
+        "fusion_layers": 2,
+        "heads": 2,
+        "ffn_dim": 512
+      },
+      "heads_8": {
+        "hidden_dim": 256,
+        "modality_layers": 2,
+        "fusion_layers": 2,
+        "heads": 8,
+        "ffn_dim": 512
+      }
+    },
+    "lambda_align_fixed": 0.2,
+    "architecture_selection_use": "diagnostic robustness analysis only; does not revise frozen held-out test results",
+    "ablation_source": "existing frozen five-seed held-out final_test_runs.csv"
+  },
+  "artifacts": [
+    {
+      "path": "results/tables/architecture_sensitivity_validation.csv",
+      "size_bytes": 4073,
+      "sha256": "12d97509b7ed46ff60ab926b2e849f51ad92a03b4abe665d2c85b96eec4011c8"
+    },
+    {
+      "path": "results/tables/architecture_sensitivity_summary.csv",
+      "size_bytes": 2574,
+      "sha256": "6cd019edadcf02e75ba84193b40381828c1fe33400f60960549152af355890fb"
+    },
+    {
+      "path": "results/tables/architecture_sensitivity_paired_vs_base.csv",
+      "size_bytes": 875,
+      "sha256": "8bbb14542301a98d93fd8a1080afd197c6dbb6d768dd784c05ba734394388137"
+    },
+    {
+      "path": "results/tables/component_ablation_final_test.csv",
+      "size_bytes": 819,
+      "sha256": "858b37c3c3a33ec05f000638d944c049949f1625fb618a6556e77c35083604c2"
+    },
+    {
+      "path": "results/tables/component_ablation_paired_effects.csv",
+      "size_bytes": 577,
+      "sha256": "ba67584575b272111df11ebf17d71add097a606fab5e46671dec399ce9a6334d"
+    },
+    {
+      "path": "figures/architecture_sensitivity_validation.pdf",
+      "size_bytes": 17773,
+      "sha256": "8bd6c66752e5eae064f203bb2fabc53032d8f1b714982069e642d9198b8699fd"
+    },
+    {
+      "path": "figures/architecture_sensitivity_validation.png",
+      "size_bytes": 50018,
+      "sha256": "202dc9c41054f44b19d4f4ff9b80a50f2ed0899a9c639076ae5b8f1dac6a898c"
+    },
+    {
+      "path": "figures/component_ablation_final_test.pdf",
+      "size_bytes": 16845,
+      "sha256": "7791dc403b9a2c3d8324f7ad8c163aa68f8fc75c5229fde98b945fe4429d1589"
+    },
+    {
+      "path": "figures/component_ablation_final_test.png",
+      "size_bytes": 28995,
+      "sha256": "327c2ad72d4d7635011edf79bdb14b5569f6787b156bce822f1341a94c0c1964"
+    }
+  ]
+}
