@@ -9,7 +9,7 @@ import torch
 from tqdm import tqdm
 from transformers import AutoModel, AutoTokenizer
 
-from merge_emotion.data.lyrics import chunk_token_ids
+from merge_emotion.data.lyrics import chunk_token_ids, ensure_batch_encoding
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 
@@ -52,6 +52,7 @@ def main():
                 max_length=args.chunk_tokens + tokenizer.num_special_tokens_to_add(),
                 return_tensors="pt",
             )
+            encoded = ensure_batch_encoding(encoded)
             encoded = {k: v.to(device) for k, v in encoded.items()}
             with torch.inference_mode():
                 with torch.autocast(device_type="cuda", dtype=torch.bfloat16, enabled=device.type == "cuda"):
