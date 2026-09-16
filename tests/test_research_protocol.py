@@ -117,6 +117,25 @@ def test_all_slurm_arrays_are_serialized_to_one_gpu():
                 assert line.rstrip().endswith("%1"), f"{path}: {line}"
 
 
+def test_full_pipeline_submission_uses_one_four_day_gpu_allocation():
+    submitter = (ROOT / "scripts/submit_one_gpu_pipeline.sh").read_text(encoding="utf-8")
+    assert submitter.count("sbatch") == 1
+    assert "--dependency" not in submitter
+    assert "12_full_pipeline_single_job.sbatch" in submitter
+
+    batch = (ROOT / "slurm/12_full_pipeline_single_job.sbatch").read_text(encoding="utf-8")
+    assert "#SBATCH --gres=gpu:1" in batch
+    assert "#SBATCH --time=4-00:00:00" in batch
+    assert "#SBATCH --array=" not in batch
+    assert "run_full_pipeline_single_gpu.sh" in batch
+
+    runner = (ROOT / "scripts/run_full_pipeline_single_gpu.sh").read_text(encoding="utf-8")
+    assert "sbatch" not in runner
+    assert "scripts/tune.py" in runner
+    assert "scripts/final_evaluate.py" in runner
+    assert "scripts/analyze_final_statistics.py" in runner
+
+
 def test_final_evaluation_skips_already_completed_checkpoint_hash():
     source = (ROOT / "scripts/final_evaluate.py").read_text(encoding="utf-8")
     assert "checkpoint_sha256" in source
