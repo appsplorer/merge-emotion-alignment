@@ -43,14 +43,14 @@
   "extra_in_splits": [],
   "artist_title_cross_split_collisions": [
     {
-      "identity": "luther vandross::never too much",
+      "identity": "enya::journey of the angels",
       "splits": [
         "train",
         "validation"
       ]
     },
     {
-      "identity": "enya::journey of the angels",
+      "identity": "luther vandross::never too much",
       "splits": [
         "train",
         "validation"

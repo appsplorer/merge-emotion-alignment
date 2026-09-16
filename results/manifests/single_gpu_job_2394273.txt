@@ -1,0 +1,5 @@
+started=2026-09-16T14:24:42+01:00
+job_id=2394273
+host=gpu9
+git_sha=d3e9c9667ecb3e59a6b8ee6483e4f1fabc96aebb
+cuda_visible_devices=0
