@@ -1,0 +1,11 @@
+{
+  "experiment": "multimodal_noalign",
+  "seed": 42,
+  "split": "validation",
+  "n": 332,
+  "checkpoint": "/beegfs/general/sa25abo/research_workplace/Projects/merge-emotion-alignment/checkpoints/final_multimodal_noalign_seed42/best.pt",
+  "checkpoint_sha256": "6770f335264ee30150ba2e9b6f196cae0cf65c51d029353b1962d5543f285c4e",
+  "source_run_id": "final_multimodal_noalign_seed42",
+  "test_used": false,
+  "output": "/beegfs/general/sa25abo/research_workplace/Projects/merge-emotion-alignment/results/representations/multimodal_noalign_validation_seed42.npz"
+}

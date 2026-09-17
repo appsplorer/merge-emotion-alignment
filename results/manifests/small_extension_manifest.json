@@ -1,0 +1,238 @@
+{
+  "created_utc": "2026-09-17T00:42:47.817845+00:00",
+  "source_git_sha": "081cc6ec5660e36d23d540717410384cfccbebf3",
+  "protocol": {
+    "new_training_runs": 3,
+    "new_training_seeds": [
+      42,
+      123,
+      777
+    ],
+    "new_training_split": "train/validation only",
+    "new_training_test_evaluated": false,
+    "sgd_momentum": 0.0,
+    "sgd_weight_decay": 0.0,
+    "gradient_clipping": "effectively disabled with threshold 1e9",
+    "optimizer_diagnostic_interpretation": "The SGD experiment tests sensitivity to the raw-gradient optimizer assumption. It is not a fair optimizer benchmark because the learning rate was inherited from the existing tuned configuration.",
+    "cspa_theory_scope": "No certified descent guarantee is claimed. The secant beta remains an empirical local smoothness estimate rather than a proven Lipschitz upper bound.",
+    "representation_split": "validation",
+    "representation_seed": 42,
+    "representation_methods": [
+      "multimodal_noalign",
+      "multimodal_fixed",
+      "cspa_affect"
+    ],
+    "projection": "L2 normalization -> PCA(max 50 dimensions) -> deterministic t-SNE(2 dimensions)",
+    "tsne_perplexity": 30,
+    "tsne_random_state": 42,
+    "collision_posthoc_test_sensitivity": true,
+    "collision_test_sensitivity_role": "diagnostic only; never used for model selection"
+  },
+  "artifacts": [
+    {
+      "path": "results/representations/multimodal_noalign_validation_seed42.npz",
+      "size_bytes": 946183,
+      "sha256": "e56fc24047fc1adf9f77dd1373fdb7a9a76d124689e8010e9ea4dc3474a62641"
+    },
+    {
+      "path": "results/representations/multimodal_noalign_validation_seed42.json",
+      "size_bytes": 562,
+      "sha256": "c1638637c564158dea6282cb1284f9083c0474428580eef58623706a92db0184"
+    },
+    {
+      "path": "results/representations/multimodal_fixed_validation_seed42.npz",
+      "size_bytes": 946029,
+      "sha256": "8aa72c81f5576286e6af55ca0443910f4df124e11f99b895b2c43f2f5da4c2a8"
+    },
+    {
+      "path": "results/representations/multimodal_fixed_validation_seed42.json",
+      "size_bytes": 554,
+      "sha256": "22e7c35590c01c575a9625e4243acc4e75fb9d776eda63db996165bfbc027729"
+    },
+    {
+      "path": "results/representations/cspa_affect_validation_seed42.npz",
+      "size_bytes": 945878,
+      "sha256": "636282d3fc4d92c35f3d11cac02a714e052869ac96af6abbade4e4e03876093e"
+    },
+    {
+      "path": "results/representations/cspa_affect_validation_seed42.json",
+      "size_bytes": 534,
+      "sha256": "e62e0a894ca8e5a4b7b262e9d24185b786dfcbbb0ad8559274dd4a3c72398092"
+    },
+    {
+      "path": "results/tables/representation_projection_manifest.csv",
+      "size_bytes": 568,
+      "sha256": "31ca269d723e5a297eaa8c0690ca1048a523c0fa6b8a4e821a17d81f8acc23b8"
+    },
+    {
+      "path": "figures/representation_tsne_modalities_validation.pdf",
+      "size_bytes": 56540,
+      "sha256": "cf27d36801aea78e5cffdead0a27a6c18a362b3d120f002b5161192146cf0f53"
+    },
+    {
+      "path": "figures/representation_tsne_fused_validation.pdf",
+      "size_bytes": 36816,
+      "sha256": "4fa6e901d45bf671f6684886e93a0980c4769d4bc4fa8e39f352b7a7d7199563"
+    },
+    {
+      "path": "figures/representation_tsne_modalities_validation.png",
+      "size_bytes": 501020,
+      "sha256": "f1e021801a890ed79e2ebf27a20446d1bfd579529bb23f083f5d259985b18fec"
+    },
+    {
+      "path": "figures/representation_tsne_fused_validation.png",
+      "size_bytes": 330712,
+      "sha256": "d47bd8f00bca949d45bf36a9a113707bd1a9a3b4af1f54c9abcb2208d4c4154b"
+    },
+    {
+      "path": "results/tables/cspa_optimizer_robustness.csv",
+      "size_bytes": 2205,
+      "sha256": "243d5b9eac41baa6f7b72f26266921d5818b8e062d8a23e3a1fd85f84c02b982"
+    },
+    {
+      "path": "results/tables/cspa_optimizer_robustness_summary.csv",
+      "size_bytes": 2070,
+      "sha256": "318189dc79a8ba634b5573296dbbb489435625bef5d4f793c1a58043748dddcc"
+    },
+    {
+      "path": "results/tables/cspa_optimizer_robustness_paired.csv",
+      "size_bytes": 208,
+      "sha256": "6dcf43bf6da5284e8d6b845dc09a78c281f0d0aae69cef245941c2bdf52ee82e"
+    },
+    {
+      "path": "figures/cspa_optimizer_robustness_validation.pdf",
+      "size_bytes": 17478,
+      "sha256": "72c19ce92d4fbee51ea2c0e5fd39308646b246c0cb757f819f61cf585bb09900"
+    },
+    {
+      "path": "figures/cspa_optimizer_robustness_validation.png",
+      "size_bytes": 103032,
+      "sha256": "79e0e329f4277cd6123b365dca5666277b45697a496e2ffa9ba889c2c5fd8020"
+    },
+    {
+      "path": "results/tables/artist_title_collision_audit.csv",
+      "size_bytes": 1531,
+      "sha256": "6867585904eaab2d54a4816eb6ac7e78b197677803ee7cc3ff005b3a102c68a1"
+    },
+    {
+      "path": "results/tables/collision_exclusion_test_sensitivity.csv",
+      "size_bytes": 4203,
+      "sha256": "8083114909d6090b3a9321e9892e7995548202c65158de81744013829d287fb1"
+    },
+    {
+      "path": "results/tables/collision_exclusion_test_sensitivity_summary.csv",
+      "size_bytes": 257,
+      "sha256": "76719076fc9bd5a7e3bdef1127b458e2ff8c4f38f2a263963d27b2d8d80f0ac8"
+    },
+    {
+      "path": "results/manifests/artist_title_collision_resolution.json",
+      "size_bytes": 524,
+      "sha256": "203383428dc47f0a24d814121f190622b1c21385784a5a4cd4e4fd3d65dd3b79"
+    },
+    {
+      "path": "results/extension_runs/cspa_sgd_seed42/config.yaml",
+      "size_bytes": 2795,
+      "sha256": "a45ef0127dcb4a9af916c5fda549b97340df43d48c72b065a7917c2f9d19bc2b"
+    },
+    {
+      "path": "results/extension_runs/cspa_sgd_seed42/system.json",
+      "size_bytes": 317,
+      "sha256": "b0b3ab099de6d964180e8510ed7e48f2772f8a6a7b9988962397b5f72b25fabb"
+    },
+    {
+      "path": "results/extension_runs/cspa_sgd_seed42/history.csv",
+      "size_bytes": 25835,
+      "sha256": "a2ab650da47e9a0ee4df69c587c5404b5bbf6a9865c419791d5e06b33cb8737a"
+    },
+    {
+      "path": "results/extension_runs/cspa_sgd_seed42/gradient_stats.csv",
+      "size_bytes": 357197,
+      "sha256": "48b02af8abf3c86691928bdc436e14f551b0e1f4cea89e1cd04c6f1b4f7fac92"
+    },
+    {
+      "path": "results/extension_runs/cspa_sgd_seed42/metrics.json",
+      "size_bytes": 1297,
+      "sha256": "7b2c89c1090a9d55313c8bb8aafe1a60235efb2d60e6a5bf71e3bea0d61aff69"
+    },
+    {
+      "path": "results/extension_runs/cspa_sgd_seed42/validation_predictions.csv",
+      "size_bytes": 31975,
+      "sha256": "b7a5ebd46b20bb14b0c118fc5974a03f01623ba9383d0479442708436cc84173"
+    },
+    {
+      "path": "results/extension_runs/cspa_sgd_seed42/status.json",
+      "size_bytes": 59,
+      "sha256": "5c37a99d4eacbf9366003a0b3e9f49ea8fc3bb304c77e65024ae950af072ad1f"
+    },
+    {
+      "path": "results/extension_runs/cspa_sgd_seed123/config.yaml",
+      "size_bytes": 2796,
+      "sha256": "90952ace298261f9b5db26da0967c5ac367ffdd86403998e39cc970ad8e5cda7"
+    },
+    {
+      "path": "results/extension_runs/cspa_sgd_seed123/system.json",
+      "size_bytes": 317,
+      "sha256": "b0b3ab099de6d964180e8510ed7e48f2772f8a6a7b9988962397b5f72b25fabb"
+    },
+    {
+      "path": "results/extension_runs/cspa_sgd_seed123/history.csv",
+      "size_bytes": 17804,
+      "sha256": "840c0d1a0b38532562be12882dce293041dd377f31058c64eb35eec8117e59f6"
+    },
+    {
+      "path": "results/extension_runs/cspa_sgd_seed123/gradient_stats.csv",
+      "size_bytes": 221292,
+      "sha256": "b65da69f85ed4a1af878a9d5c0ee4c5e85f9013d59bdc385826dfd1098f0eb5e"
+    },
+    {
+      "path": "results/extension_runs/cspa_sgd_seed123/metrics.json",
+      "size_bytes": 1314,
+      "sha256": "9e45ab88dd713f0258ec59661dc42bd718c5d771d9b0255a70fe407aa7f90fa8"
+    },
+    {
+      "path": "results/extension_runs/cspa_sgd_seed123/validation_predictions.csv",
+      "size_bytes": 31887,
+      "sha256": "c9c662f7249fe18cb27549ba757147773b2cf076061be5c631345d8deefc0ce8"
+    },
+    {
+      "path": "results/extension_runs/cspa_sgd_seed123/status.json",
+      "size_bytes": 60,
+      "sha256": "5261d6e95b5d78e02897f0da464176bd618e0c7d517a93d61e2411b034bd3801"
+    },
+    {
+      "path": "results/extension_runs/cspa_sgd_seed777/config.yaml",
+      "size_bytes": 2796,
+      "sha256": "6f5bfa9d1847500192e9e477e7cdde3bdbbf608306cd98438bb53de2af4a0359"
+    },
+    {
+      "path": "results/extension_runs/cspa_sgd_seed777/system.json",
+      "size_bytes": 317,
+      "sha256": "b0b3ab099de6d964180e8510ed7e48f2772f8a6a7b9988962397b5f72b25fabb"
+    },
+    {
+      "path": "results/extension_runs/cspa_sgd_seed777/history.csv",
+      "size_bytes": 14196,
+      "sha256": "18fb82d7774ebedd2f4a05ed7fb08d5da2d9ad3cb650527cc8c0392e80d52845"
+    },
+    {
+      "path": "results/extension_runs/cspa_sgd_seed777/gradient_stats.csv",
+      "size_bytes": 168404,
+      "sha256": "afc7093e8e5a116cf41ff52f6a7d88a26f9057b89143b9443416751e518f10cf"
+    },
+    {
+      "path": "results/extension_runs/cspa_sgd_seed777/metrics.json",
+      "size_bytes": 1328,
+      "sha256": "c9edd4479a7361b6208896f9f59f0fe29cc38bf6ed8ef28ea731c9c9f1a0f9bd"
+    },
+    {
+      "path": "results/extension_runs/cspa_sgd_seed777/validation_predictions.csv",
+      "size_bytes": 31898,
+      "sha256": "1599838ba851d33ba4d687cab0f91b9643ae42f5c29ae1baba053c8b3e3a2cca"
+    },
+    {
+      "path": "results/extension_runs/cspa_sgd_seed777/status.json",
+      "size_bytes": 60,
+      "sha256": "cec494beae0eadc7b1835f77bca018aed05f6463c8db31a4a0e7b91abcf3fa2a"
+    }
+  ]
+}

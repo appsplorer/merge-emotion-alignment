@@ -1,0 +1,11 @@
+{
+  "experiment": "cspa_affect",
+  "seed": 42,
+  "split": "validation",
+  "n": 332,
+  "checkpoint": "/beegfs/general/sa25abo/research_workplace/Projects/merge-emotion-alignment/checkpoints/final_cspa_affect_seed42/best.pt",
+  "checkpoint_sha256": "0ef85553d5ded514c3c455039d9a4a4d89bd471fcbd0807da8c75bebc72ff866",
+  "source_run_id": "final_cspa_affect_seed42",
+  "test_used": false,
+  "output": "/beegfs/general/sa25abo/research_workplace/Projects/merge-emotion-alignment/results/representations/cspa_affect_validation_seed42.npz"
+}

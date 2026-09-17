@@ -1,0 +1,10 @@
+{
+  "cuda_available": true,
+  "cuda_build": "12.8",
+  "git_sha": "081cc6ec5660e36d23d540717410384cfccbebf3",
+  "gpu": "NVIDIA A100 80GB PCIe",
+  "hostname": "gpu9",
+  "python": "3.9.25 (main, Apr 17 2026, 00:00:00) \n[GCC 11.5.0 20240719 (Red Hat 11.5.0-14)]",
+  "slurm_job_id": "2394559",
+  "torch": "2.8.0+cu128"
+}

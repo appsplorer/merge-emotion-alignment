@@ -1,0 +1,11 @@
+{
+  "source_integrity_report": "results/manifests/merge_70-15-15_integrity.json",
+  "n_flagged_identities": 3,
+  "n_cross_split_pair_comparisons": 3,
+  "verdict_counts": {
+    "partial_duplicate_evidence": 2,
+    "distinct_files_same_artist_title": 1
+  },
+  "suspicious_test_song_ids": [],
+  "interpretation": "Artist-title equality alone is treated as a warning. Duplicate evidence requires raw-audio hash equality, normalized-lyrics hash equality, or exceptionally high cached cross-instance representation similarity."
+}

@@ -1,0 +1,11 @@
+{
+  "experiment": "multimodal_fixed",
+  "seed": 42,
+  "split": "validation",
+  "n": 332,
+  "checkpoint": "/beegfs/general/sa25abo/research_workplace/Projects/merge-emotion-alignment/checkpoints/final_multimodal_fixed_seed42/best.pt",
+  "checkpoint_sha256": "2de39f684fcb332ccc6e8a1cc83c7fdaada98037f7250f71ac835c04e80a3549",
+  "source_run_id": "final_multimodal_fixed_seed42",
+  "test_used": false,
+  "output": "/beegfs/general/sa25abo/research_workplace/Projects/merge-emotion-alignment/results/representations/multimodal_fixed_validation_seed42.npz"
+}

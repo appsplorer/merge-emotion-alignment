@@ -1,0 +1,11 @@
+completed=2026-09-17T01:42:49+01:00
+job_id=2394559
+host=gpu9
+reservation=sa25abo
+source_git_sha=081cc6ec5660e36d23d540717410384cfccbebf3
+new_training_runs=3
+new_training_seeds=42,123,777
+new_training_split=validation
+new_training_test_evaluated=false
+representation_split=validation
+representation_seed=42

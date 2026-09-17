@@ -1,0 +1,4 @@
+experiment,seed,split,n,checkpoint_sha256,preprocessing,tsne_perplexity,tsne_random_state,test_used
+multimodal_noalign,42,validation,332,6770f335264ee30150ba2e9b6f196cae0cf65c51d029353b1962d5543f285c4e,L2 normalization then PCA(max 50) then t-SNE,30,42,False
+multimodal_fixed,42,validation,332,2de39f684fcb332ccc6e8a1cc83c7fdaada98037f7250f71ac835c04e80a3549,L2 normalization then PCA(max 50) then t-SNE,30,42,False
+cspa_affect,42,validation,332,0ef85553d5ded514c3c455039d9a4a4d89bd471fcbd0807da8c75bebc72ff866,L2 normalization then PCA(max 50) then t-SNE,30,42,False

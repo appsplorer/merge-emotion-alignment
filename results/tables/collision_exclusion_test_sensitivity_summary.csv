@@ -1,0 +1,10 @@
+experiment,n,mean_delta,max_abs_delta
+affect_only,5,0.0,0.0
+audio_only,5,0.0,0.0
+cspa_affect,5,0.0,0.0
+cspa_only,5,0.0,0.0
+lyrics_only,5,0.0,0.0
+multimodal_cagrad,5,0.0,0.0
+multimodal_fixed,5,0.0,0.0
+multimodal_noalign,5,0.0,0.0
+multimodal_pcgrad,5,0.0,0.0

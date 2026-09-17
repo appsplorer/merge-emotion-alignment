@@ -1,0 +1,110 @@
+project:
+  name: merge-emotion-alignment
+  root: /beegfs/general/sa25abo/research_workplace/Projects/merge-emotion-alignment
+  seed: 42
+  deterministic: true
+paths:
+  data_root: /beegfs/general/sa25abo/research_workplace/Projects/merge-emotion-alignment/data
+  cache_root: /beegfs/general/sa25abo/research_workplace/Projects/merge-emotion-alignment/cache
+  checkpoint_root: /beegfs/general/sa25abo/research_workplace/Projects/merge-emotion-alignment/checkpoints
+  log_root: /beegfs/general/sa25abo/research_workplace/Projects/merge-emotion-alignment/logs
+  run_root: /beegfs/general/sa25abo/research_workplace/Projects/merge-emotion-alignment/results/runs
+  model_cache: /beegfs/general/sa25abo/research_workplace/Models/huggingface_cache
+runtime:
+  device: auto
+  precision: bf16
+  num_workers: 4
+  pin_memory: true
+dataset:
+  name: MERGE_Bimodal_Complete
+  version: 1.1.0
+  profile: 70-15-15
+  manifest: data/processed/pairs_70-15-15.csv
+  num_classes: 4
+  labels:
+  - Q1
+  - Q2
+  - Q3
+  - Q4
+audio:
+  sample_rate: 24000
+  clip_seconds: 30
+  segment_seconds: 5
+  max_segments: 6
+lyrics:
+  max_tokens_per_chunk: 256
+  max_chunks: 8
+audio_model:
+  pretrained: m-a-p/MERT-v1-95M
+  local_path: /beegfs/general/sa25abo/research_workplace/Models/huggingface_cache/m-a-p__MERT-v1-95M
+  input_dim: 768
+  hidden_dim: 256
+  transformer_layers: 2
+  attention_heads: 4
+  ffn_dim: 512
+  dropout: 0.15586680636684225
+  max_tokens: 6
+lyrics_model:
+  pretrained: FacebookAI/roberta-base
+  local_path: /beegfs/general/sa25abo/research_workplace/Models/huggingface_cache/FacebookAI__roberta-base
+  input_dim: 768
+  hidden_dim: 256
+  transformer_layers: 2
+  attention_heads: 4
+  ffn_dim: 512
+  dropout: 0.15586680636684225
+  max_tokens: 8
+multimodal:
+  hidden_dim: 256
+  attention_heads: 4
+  cross_attention_dropout: 0.1
+  fusion_layers: 2
+  ffn_dim: 512
+  dropout: 0.15586680636684225
+  num_classes: 4
+emotion_loss:
+  lambda_uni: 0.4575708941376109
+  label_smoothing: 0.0
+contrastive:
+  enabled: true
+  lambda_align: 0.2
+  temperature: 0.07
+  symmetric: true
+affect_aware:
+  enabled: true
+  epsilon: 0.1
+  gamma: 1.0
+optimizer:
+  name: sgd
+  learning_rate: 0.00013076762306504588
+  weight_decay: 0.0
+  gradient_clip_norm: 1000000000.0
+  momentum: 0.0
+scheduler:
+  name: cosine
+  warmup_ratio: 0.1
+training:
+  batch_size: 32
+  max_epochs: 50
+  early_stopping_patience: 7
+  monitor: val_macro_f1
+  monitor_mode: max
+  save_last: true
+  save_best: true
+cspa:
+  enabled: true
+  lambda_max: 1.0
+  kappa: 0.8
+  rho: 0.5
+  ema_beta: 0.9
+  curvature_safety_factor: 1.5
+  curvature_min: 0.0
+  curvature_max: 10000.0
+  eps: 1.0e-08
+  guarantee_scope: conditional_raw_sgd_if_beta_upper_bound
+gradient_strategy:
+  name: scalarization
+experiment:
+  name: cspa_affect_sgd
+  modality: multimodal
+  stage: optimizer_robustness
